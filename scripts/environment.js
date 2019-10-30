@@ -1,6 +1,7 @@
 let BGImageLast;
 let BGImageSecondLast;
 let ImgMiddleGround;
+let ImgLakeSolo;
 let snowflakes = [];
 
 class BackgroundLast {
@@ -58,7 +59,36 @@ class MiddleGround {
             }
 
         };
-       
+
+
+    }
+}
+class LakeSolo {
+    draw() {
+        let lakePos = x;
+
+
+        if (icebreakTree === "true") {
+            image(ImgLakeSolo, lakePos, 0, 10000, 1000)
+
+        }
+
+        /*         if (keyIsDown(39) && icebreak !== "yes" && hitobstacleFW !== "true") {
+                    direction = "forward";
+                    if (lakePos >= -ImgMiddleGround.width + canvasWidth) {
+                        lakePos -= movingSpeed;
+                        movingState = "moving";
+                    }
+
+                } else if (keyIsDown(37) && icebreak !== "yes" && hitobstacleBW !== "true") {
+                    direction = "backward";
+                    if (lakePos <= -10) {
+                        lakePos += movingSpeed
+                        movingState = "moving";
+                    }
+
+                }; */
+
 
     }
 }
@@ -112,3 +142,5 @@ function snowflake() {
         noStroke();
     };
 }
+
+

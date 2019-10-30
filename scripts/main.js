@@ -1,19 +1,24 @@
 let backgroundLast = new BackgroundLast;
 let backgroundsecondLast = new BackgroundSecondLast;
 let middleGround = new MiddleGround;
+let lake = new LakeSolo;
 let girl = new Girl;
 let snow = new Snow;
 let obstacle1 = new Obstacle1;
+let tree = new ObstacleTree;
+let snowball = new Snowball;
 
 
 function preload() {
     //BG_Images
     BGImageLast = loadImage("/Assets/Background_Last_Layer_2.png");
     BGImageSecondLast = loadImage("/Assets/Background_Second_Last_Layer.png");
-    ImgMiddleGround = loadImage("/Assets/MiddleGround__Layer copy.png");
+    ImgMiddleGround = loadImage("/Assets/MiddleGround__Layer_191028.png");
+    ImgLakeSolo = loadImage("/Assets/BackgroundLake_Solo.png");
 
     //Obstacles
     obstacle1.setup()
+    tree.setup()
 
 
     //Spritesheets Girl
@@ -33,6 +38,8 @@ function setup() {
     girlAnimationPushingBackward.frameDelay = 2;
     girlAnimationBreakingIceForward.frameDelay = 2;
     girlAnimationBreakingIceBackward.frameDelay = 2;
+    girlAnimationThrowingForward.frameDelay = 2;
+    girlAnimationThrowingBackward.frameDelay = 2;
 }
 
 function draw() {
@@ -42,11 +49,17 @@ function draw() {
     backgroundLast.draw();
     backgroundsecondLast.draw();
     middleGround.draw();
+    tree.draw()
+    obstacle1.draw();
+    drawSprites();
+
     girl.draw();
- /*    obstacle1.draw(); */
+    girl.throwingBall()
+    lake.draw();
+
     snow.draw();
     reset();
-    drawSprites();
+
     /*    push()
        fill("red")
        rect(500, 700 , 200, 200)
