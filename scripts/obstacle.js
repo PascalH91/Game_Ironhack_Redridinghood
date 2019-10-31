@@ -57,23 +57,24 @@ class Obstacle1 {
         //     /*  image(obstacleImage1, 1690 + x, 610, 200, 300); */
         //     obstacle1Sprite.position.x = 1790 + x;
         //  /*    obstacle1Sprite.displace(girlCollider) */
-        if (girl.y < o1BorderHeight && x < o1BorderLeft && x > o1BorderRight) {
+        if (girl.y <= o1BorderHeight && x <= o1BorderLeft && x >= o1BorderRight) {
             girl.originalY = 570;
-        } else if (girl.y < 650 && x < -1130 && x > -1200) {
+        } else if (girl.y <= 650 && x <= -1130 && x >= -1200) {
             girl.originalY = 570;
-        } else if (girl.y < o2JumpHeight && x < o2BorderLeft && x > o2BorderRight) {
+        } else if (girl.y <= o2JumpHeight && x <= o2BorderLeft && x >= o2BorderRight) {
             girl.originalY = 480;
-        } else if (girl.y < o3JumpHeight && x < o3BorderLeft && x > o3BorderRight) {
+        } else if (girl.y <= o3JumpHeight && x <= o3BorderLeft && x >= o3BorderRight) {
             girl.originalY = 370;
-        } else if (girl.y < o4JumpHeight && x < o4BorderLeft && x > o4BorderRight) {
+        } else if (girl.y <= o4JumpHeight && x <= o4BorderLeft && x >= o4BorderRight) {
             girl.originalY = 600;
-        } else if (girl.y < o5JumpHeight && x < -LeftborderTree - 50 && x > -LeftborderTree - 520 && treeYPosition === 800) {
+            saveZone = "active"
+        } else if (girl.y <= o5JumpHeight && x <= -LeftborderTree - 50 && x >= -LeftborderTree - 520 && treeYPosition === 800) {
             girl.originalY = 710;
-        } else if (girl.y < o5JumpHeight && x < -LeftborderTree - 50 && x > -LeftborderTree - 520) {
+        } else if (girl.y < o5JumpHeight && x <= -LeftborderTree - 50 && x >= -LeftborderTree - 520) {
             girl.originalY = 650;
-        } else if (x < o1BorderLeft && x > o1BorderRight && direction === "forward" || x < o2BorderLeft && x > o2BorderRight && direction === "forward" || x < o3BorderLeft && x > o3BorderRight && direction === "forward" || x < o4BorderLeft && x > o4BorderRight && direction === "forward" /* || x < o5BorderTreeLeft && x > o5BorderTreeRight && direction === "forward" */) {
+        } else if (x <= o1BorderLeft && x >= o1BorderRight && direction === "forward" || x <= o2BorderLeft && x >= o2BorderRight && direction === "forward" || x <= o3BorderLeft && x >= o3BorderRight && direction === "forward" || x <= o4BorderLeft && x >= o4BorderRight && direction === "forward" /* || x < o5BorderTreeLeft && x > o5BorderTreeRight && direction === "forward" */ ) {
             hitobstacleFW = "true"
-        } else if (x < o1BorderLeft && x > o1BorderRight && direction === "backward" || x < o2BorderLeft && x > o2BorderRight && direction === "backward" || x < o3BorderLeft && x > o3BorderRight && direction === "backward" || x < o4BorderLeft && x > o4BorderRight && direction === "backward" /* || x < o5BorderTreeLeft && x > o5BorderTreeRight && direction === "backward" */ ) {
+        } else if (x <= o1BorderLeft && x >= o1BorderRight && direction === "backward" || x <= o2BorderLeft && x >= o2BorderRight && direction === "backward" || x <= o3BorderLeft && x >= o3BorderRight && direction === "backward" || x <= o4BorderLeft && x >= o4BorderRight && direction === "backward" /* || x < o5BorderTreeLeft && x > o5BorderTreeRight && direction === "backward" */ ) {
             hitobstacleBW = "true"
         } else {
             hitobstacleFW = "false";
@@ -84,7 +85,14 @@ class Obstacle1 {
             girl.originalY = 750;
         }
 
-        /*   console.log(o5BorderTreeLeft) */
+
+        //Dying from Jumping
+        if (x < o2BorderRight && x > o3BorderLeft && girl.y === 750) {
+            gameMode = 3;
+        } else if (x < o3BorderRight && girl.y === 750 && saveZone === "deactivated") {
+            gameMode = 3;
+        }
+
 
     }
 
@@ -108,10 +116,10 @@ class ObstacleTree {
         treeSprite.position.y = treeYPosition;
 
 
+
         if (x <= -LeftborderTree && x >= -RightborderTree) {
             if (pushState === "push" && movingState === "moving" && direction === "forward") {
                 LeftborderTree += movingSpeed + 1;
-                /*    console.log(x); */
 
             } else if (pushState === "push" && movingState === "moving" && direction === "backward") {
                 if (LeftborderTree >= 1860) {
@@ -127,7 +135,8 @@ class ObstacleTree {
             treeYPosition = 800;
             icebreakTree = "true";
         }
-
+        console.log("treeSprite.position.x", treeSprite.position.x)
+        console.log("LeftborderTree", LeftborderTree)
         /*      if (girl.y < 700 && x <= -LeftborderTree && x >= -RightborderTree) {
                  girl.originalY = 650;
              } */

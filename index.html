@@ -6,16 +6,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Little_Red_Riding_Hood</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div></div>
-<!--      <button>replay</button> -->
+
+    <div id="container"></div>
+    <div class="gradient"></div>
+
+
+
+
+    <h2 class="timer"></h2>
+
+    <!-- STARTWINDOW -->
+    <section id="start">
+        <div class="wrapperdiv">
+            <article>
+                Help little Red-Riding-Hack arrive safely at her grandmas cabin!
+            </article>
+            <div>
+                <button class="start" onclick="startGame()">start to play</button>
+                <p>You can use the following commands:</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="restart">
+        <div class="wrapperdiv">
+            <article>
+                Help little Red-Riding-Hack arrive safely at her grandmas cabin.
+            </article>
+
+            <button class="restart" onclick="restart()">restart</button>
+        </div>
+    </section>
+
+    <section id="winning">
+        <div class="wrapperdiv">
+            <article>
+                Congratulations!!!<br>
+                You made it. Time for Ironbeer.
+            </article>
+        </div>
+        <p>Do you want to play again?</p>
+        <button class="restart" onclick="restart()">restart</button>
+        <div>
+        </div>
+    </section>
+
+
+
+    <!-- RESTARTWINDOW -->
+
 
 
     <script src="scripts/p5.js"></script>
     <script src="scripts/p5.play.js"></script>
+    <script src="scripts/p5.sound.js"></script>
     <script src="scripts/constants.js"></script>
     <script src="scripts/environment.js"></script>
     <script src="scripts/Snowball.js"></script>

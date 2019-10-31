@@ -33,13 +33,13 @@ let hitArr = [];
 class BackgroundLast {
     draw() {
         image(BGImageLast, x * 0.5, 0, 10000, 1000)
-        if (keyIsDown(39) && icebreak !== "yes" && hitobstacleFW !== "true") {
+        if (keyIsDown(39) && icebreak !== "yes" && hitobstacleFW !== "true" && gameMode === 1) {
             direction = "forward";
             if (x >= -ImgMiddleGround.width + canvasWidth) {
                 x -= movingSpeed
             }
 
-        } else if (keyIsDown(37) && icebreak !== "yes" && hitobstacleBW !== "true") {
+        } else if (keyIsDown(37) && icebreak !== "yes" && hitobstacleBW !== "true" && gameMode === 1) {
             direction = "backward";
             if (x <= -10) {
                 x += movingSpeed
@@ -51,13 +51,13 @@ class BackgroundLast {
 class BackgroundSecondLast {
     draw() {
         image(BGImageSecondLast, x * 0.7, 0, 10000, 1000)
-        if (keyIsDown(39) && icebreak !== "yes" && hitobstacleFW !== "true") {
+        if (keyIsDown(39) && icebreak !== "yes" && hitobstacleFW !== "true" && gameMode === 1) {
             direction = "forward";
             if (x >= -ImgMiddleGround.width + canvasWidth) {
                 x -= movingSpeed
             }
 
-        } else if (keyIsDown(37) && icebreak !== "yes" && hitobstacleBW !== "true") {
+        } else if (keyIsDown(37) && icebreak !== "yes" && hitobstacleBW !== "true" && gameMode === 1) {
             direction = "backward";
             if (x <= -10) {
                 x += movingSpeed
@@ -70,14 +70,14 @@ class BackgroundSecondLast {
 class MiddleGround {
     draw() {
         image(ImgMiddleGround, x, 0, 10000, 1000)
-        if (keyIsDown(39) && icebreak !== "yes" && hitobstacleFW !== "true") {
+        if (keyIsDown(39) && icebreak !== "yes" && hitobstacleFW !== "true" && gameMode === 1) {
             direction = "forward";
             if (x >= -ImgMiddleGround.width + canvasWidth) {
                 x -= movingSpeed
                 movingState = "moving";
             }
 
-        } else if (keyIsDown(37) && icebreak !== "yes" && hitobstacleBW !== "true") {
+        } else if (keyIsDown(37) && icebreak !== "yes" && hitobstacleBW !== "true" && gameMode === 1) {
             direction = "backward";
             if (x <= -10) {
                 x += movingSpeed
@@ -122,12 +122,6 @@ class FenceDoor {
             fenceDoorOpeningAnimation.looping = false
         }
 
-        /*        if (trenchOpen === "true") {
-                   animation(fenceDoorOpenAnimation, 7605 + x, 500)
-               } */
-
-
-
         if (x < o6BorderFenceLeft && trenchOpen === "false") {
             hitobstacleFW = "true"
         }
@@ -139,16 +133,10 @@ class FenceDoor {
 
 
 class FenceFront {
-
-
-
     draw() {
         image(ImgFenceFront, x, 0, 10000, 1000)
     }
 }
-
-
-
 
 class House {
     setup() {
@@ -180,10 +168,13 @@ class HouseDoor {
             animation(houseDoorOpeningAnimation, 9100 + x, 500)
             houseDoorOpeningAnimation.looping = false
         }
-        qwe
+
         if (x <= -8150) {
-            enteredHouse = "true"
-            hitobstacleFW = "true"
+
+        
+            enteredHouse = "true";
+            gameMode = 4;
+            hitobstacleFW = "true";
         }
     }
 }

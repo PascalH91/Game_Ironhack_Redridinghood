@@ -7,6 +7,7 @@ let fenceDoor = new FenceDoor;
 let house = new House;
 let houseDoor = new HouseDoor;
 let target = new Target;
+let timer = new Timer;
 
 let girl = new Girl;
 let snow = new Snow;
@@ -15,6 +16,8 @@ let tree = new ObstacleTree;
 let snowball = new Snowball;
 /* let fenceDoor = new FenceDoor; */
 
+let wind;
+
 function preload() {
     //BG_Images
     BGImageLast = loadImage("/Assets/Background_Last_Layer_2.png");
@@ -22,7 +25,10 @@ function preload() {
     ImgMiddleGround = loadImage("/Assets/MiddleGround__Layer_191031.png");
     ImgLakeSolo = loadImage("/Assets/BackgroundLake_Solo.png");
     ImgFenceFront = loadImage("/Assets/Fence_Front.png");
-    /*   snowBallImage = loadImage("/Assets/Snowball-PNG-Transparent-Picture.png") */
+
+    //SOUNDS
+
+
 
     //Obstacles
     obstacle1.setup()
@@ -38,7 +44,10 @@ function preload() {
 }
 
 function setup() {
-    createCanvas(canvasWidth, canvasHeight);
+    let canvas = createCanvas(canvasWidth, canvasHeight);
+    canvas.parent("container");
+
+    //Animation Delays
     girlAnimationStandingForward.frameDelay = 2;
     girlAnimationStandingBackward.frameDelay = 2;
     girlAnimationJumpingForward.frameDelay = 2;
@@ -64,37 +73,38 @@ function setup() {
     targetAnimation.frameDelay = 2;
     targetAnimationStill.frameDelay = 2;
 
+    document.querySelector("#restart").style.visibility = "hidden";
+    document.querySelector("#winning").style.visibility = "hidden";
 }
+
 
 function draw() {
-    background("black", 0, 0, 10000, 1000);
-    t = frameCount / 60;
-    movingState = "still";
-    backgroundLast.draw();
-    backgroundsecondLast.draw();
-    middleGround.draw();
-    tree.draw()
-    obstacle1.draw();
-    drawSprites();
-    fenceDoor.draw();
-    house.draw();
-    target.draw()
-    girl.draw();
 
-    houseDoor.draw();
+    if (gameMode > 0) {
+        document.querySelector("#start").style.visibility = "hidden"
+        background("black", 0, 0, 10000, 1000);
+        t = frameCount / 60;
+        timer.setup();
+        movingState = "still";
+        backgroundLast.draw();
+        backgroundsecondLast.draw();
+        middleGround.draw();
+        tree.draw()
+        obstacle1.draw();
+        drawSprites();
+        fenceDoor.draw();
+        house.draw();
+        target.draw()
+        girl.draw();
 
-    girl.throwingBall()
-    lake.draw();
-    fenceFront.draw();
-    snow.draw();
-    reset();
-    console.log(enteredHouse)
+        houseDoor.draw();
 
-    /*    push()
-       fill("red")
-       rect(500, 700 , 200, 200)
-       pop(); */
+        girl.throwingBall()
+        lake.draw();
+        fenceFront.draw();
+        snow.draw();
+        restartWindow();
+        restartWindow();
+        winningWindow();
+    }
 }
-
-
-/* document.querySelector("button").onclick = reset() */

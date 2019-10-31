@@ -106,7 +106,6 @@ class Girl {
 
             this.jumpCount = 0;
             jumpState = "no";
-
         }
 
         /*         positionColliderX = girlCollider.position.x;
@@ -116,9 +115,14 @@ class Girl {
 
 
         //BREAKING INTO THE ICE--------------------------->>>
-        // if (x < -3670 && x > -4200 && this.y === 750) {
-        //     icebreak = "yes"
-        // }
+        if (x < -3670 && x > -4200 && this.y === 750) {
+            icebreak = "yes";
+            if (girlAnimationBreakingIceForward.getFrame() === 49) {
+                gameMode = 3;
+            } else if (girlAnimationBreakingIceBackward.getFrame() === 49) {
+                gameMode = 3;
+            }
+        }
 
         //IDLE ANIMATIONS GIRL--------------------------->>>
         if (jumpState === "no" && direction === "forward" && throwState === "true") {
@@ -126,12 +130,15 @@ class Girl {
         } else if (jumpState === "no" && direction === "backward" && throwState === "true") {
             animation(girlAnimationThrowingBackward, canvasWidth / 2, this.y)
         } else if (jumpState === "no" && direction === "forward" && icebreak === "yes") {
+            /*  girlAnimationBreakingIceForward.rewind(); */
             animation(girlAnimationBreakingIceForward, canvasWidth / 2, this.y)
+            girlAnimationBreakingIceForward.looping = false;
         } else if (jumpState === "no" && direction === "backward" && icebreak === "yes") {
-            animation(girlAnimationBreakingIceBackward, canvasWidth / 2, this.y)
+            /*       girlAnimationBreakingIceBackward.rewind(); */
+            animation(girlAnimationBreakingIceBackward, canvasWidth / 2, this.y);
+            girlAnimationBreakingIceBackward.looping = false;
         } else if (jumpState === "no" && direction === "forward" && movingState === "moving" && pushState === "push") {
             animation(girlAnimationPushingForward, canvasWidth / 2, this.y);
-
         } else if (jumpState === "no" && direction === "backward" && movingState === "moving" && pushState === "push") {
             animation(girlAnimationPushingBackward, canvasWidth / 2, this.y)
         } else if (jumpState === "no" && direction === "forward" && movingState === "moving") {
@@ -143,11 +150,19 @@ class Girl {
         } else if (jumpState === "yes" && direction === "backward") {
             animation(girlAnimationJumpingBackward, canvasWidth / 2, this.y);
         } else if (direction === "forward") {
-            /*  girlAnimationStandingForward.scale = 2; */
+            push();
+            if (gameMode === 3) {
+                tint(255, 20, 0, 150)
+            };
             animation(girlAnimationStandingForward, canvasWidth / 2, this.y);
-
+            pop();
         } else if (direction === "backward") {
+            push();
+            if (gameMode === 3) {
+                tint(255, 20, 0, 150)
+            };
             animation(girlAnimationStandingBackward, canvasWidth / 2, this.y);
+            pop();
         }
     }
 
@@ -165,6 +180,9 @@ class Girl {
 
             for (let i = 0; i < this.snowballs.length; i++) {
                 this.snowballs[i].draw();
+                if (keyIsDown(83)) {
+                    snowVelocity -= 1
+                }
             }
 
 
@@ -174,23 +192,18 @@ class Girl {
             snowVelocity += snowGravity;
             snowball_Y += snowVelocity;
 
-            if (snowball_Y > 660 && snowball_Y < 665 && (x - snowball_X) < -7000 && (x - snowball_X) > -7090) {
+            if (snowball_Y > 600 && snowball_Y < 690 && (x - snowball_X) < -7000 && (x - snowball_X) > -7090) {
                 trenchOpen = "true";
                 hitTarget = "true";
-                snowballAppearance = "false";
                 targetAnimation.rewind();
-                this.snowballs = [];
+                snowGravity = 30;
                 hitArr.push(1);
             }
-            
+
             if (snowball_Y > canvasHeight - 100) {
-                /* snowball_Y = snowBall_Y_Origin; */
-                console.log("OUT");
                 snowballAppearance = "false"; // state of showing the ball
-
                 this.snowballs = []
-                console.log(this.snowballs.length);
-
+                snowball_X = canvasWidth / 2 + 10;
             }
             snowball_X += snowBallDirection
 
@@ -212,8 +225,6 @@ function keyPressed() {
     //----JUMPING
     if (keyCode === 32) {
         girl.jump()
-        console.log("snowballY", snowball_Y);
-        console.log("girlY", girlY);
     }
 
     //----PUSHING
@@ -229,6 +240,13 @@ function keyPressed() {
     }
 
     //-----SHOOTING EVENT
+
+
+
+
+
+
+
     if (shootingCount === 0) {
         //----SETTING SHOOTING DIRECTIION
         if (direction === "forward") {
@@ -238,7 +256,7 @@ function keyPressed() {
         //------SHOOTING RELEASE
         if (keyCode === 83) {
 
-
+            snowVelocity = 0
             setTimeout(() => {
                 girl.snowballs.push(snowball);
                 snowballAppearance = "true";
@@ -262,16 +280,12 @@ function keyPressed() {
 
             //----SHOOTING RESET INTERVAL
             setTimeout(() => {
-
                 i++
                 if (i >= 1) {
-                    /*  throwState = "false"; */
-                    /*      snowball_Y = girl.originalY - 50; */
-                    snowball_X = canvasWidth / 2 + 10;
                     snowVelocity = 0;
                     fallDown = 0;
                     shootingCount = 0;
-
+                    snowGravity = 1.2;
                 }
             }, 1150);
         }
