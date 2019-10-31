@@ -69,7 +69,7 @@ class Timer {
                 miliseconds = (60 - frameCount % 60).toString();
             }
 
-            document.querySelector("h2.timer").innerHTML = minutes + ":" + seconds + ":" + miliseconds;
+            document.querySelector("h2.timer").innerHTML = minutes + ":" + seconds/*  + ":" + miliseconds */;
             if (minutes < 0) {
                 document.querySelector("h2.timer").innerHTML = "0:00:00"
                 gameMode = 3;
@@ -108,6 +108,7 @@ function winningWindow() {
 function startGame() {
     gameMode = 1;
     frameCount = 0;
+    // document.querySelector('.start').style.color = 'green'
 }
 
 function restart() {

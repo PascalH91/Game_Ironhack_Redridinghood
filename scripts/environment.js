@@ -3,6 +3,11 @@ let BGImageSecondLast;
 let ImgMiddleGround;
 let ImgLakeSolo;
 let ImgFenceFront;
+let ImgFog;
+let ImgForeground;
+
+
+
 let snowflakes = [];
 
 let fenceDoorClosedSpritesheet;
@@ -89,6 +94,21 @@ class MiddleGround {
 
     }
 }
+
+class Fog {
+    draw() {
+        image(ImgFog, x * 1.3, 0, 14000, 1000)
+    }
+}
+
+class ForGround {
+    draw() {
+        image(ImgForeground, x * 1.6, 0, 15000, 1000)
+    }
+}
+
+
+
 class LakeSolo {
     draw() {
         let lakePos = x;
@@ -171,7 +191,7 @@ class HouseDoor {
 
         if (x <= -8150) {
 
-        
+
             enteredHouse = "true";
             gameMode = 4;
             hitobstacleFW = "true";

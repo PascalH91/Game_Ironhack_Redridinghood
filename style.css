@@ -117,8 +117,9 @@ button {
     justify-content: center;
     align-items: center;
     font-family: 'Amatic SC', cursive;
-    transition-duration: 0.5s;
-    z-index: 3;
+    transition-property: font-size;
+    transition-duration: .5s;
+    /* z-index: 1; */
 }
 
 button:hover {
@@ -129,9 +130,12 @@ button:hover {
 }
 
 button:active {
+    background: -webkit-linear-gradient(rgb(255, 0, 0), rgb(104, 0, 0));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /*    color: rgb(184, 0, 0); */
     outline: none;
     border: none;
-    color: red;
 }
 
 article {

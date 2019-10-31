@@ -1,6 +1,8 @@
 let backgroundLast = new BackgroundLast;
 let backgroundsecondLast = new BackgroundSecondLast;
 let middleGround = new MiddleGround;
+let fog = new Fog;
+let forGround = new ForGround;
 let lake = new LakeSolo;
 let fenceFront = new FenceFront;
 let fenceDoor = new FenceDoor;
@@ -25,6 +27,8 @@ function preload() {
     ImgMiddleGround = loadImage("/Assets/MiddleGround__Layer_191031.png");
     ImgLakeSolo = loadImage("/Assets/BackgroundLake_Solo.png");
     ImgFenceFront = loadImage("/Assets/Fence_Front.png");
+    ImgFog = loadImage("/Assets/fog.png");
+    ImgForeground = loadImage("/Assets/Foreground_new2.png");
 
     //SOUNDS
 
@@ -102,7 +106,10 @@ function draw() {
         girl.throwingBall()
         lake.draw();
         fenceFront.draw();
+        fog.draw();
         snow.draw();
+        forGround.draw();
+
         restartWindow();
         restartWindow();
         winningWindow();

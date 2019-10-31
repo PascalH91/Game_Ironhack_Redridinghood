@@ -67,7 +67,7 @@ class Obstacle1 {
             girl.originalY = 370;
         } else if (girl.y <= o4JumpHeight && x <= o4BorderLeft && x >= o4BorderRight) {
             girl.originalY = 600;
-            saveZone = "active"
+
         } else if (girl.y <= o5JumpHeight && x <= -LeftborderTree - 50 && x >= -LeftborderTree - 520 && treeYPosition === 800) {
             girl.originalY = 710;
         } else if (girl.y < o5JumpHeight && x <= -LeftborderTree - 50 && x >= -LeftborderTree - 520) {
@@ -87,11 +87,17 @@ class Obstacle1 {
 
 
         //Dying from Jumping
+        if (girl.y === 600 && x <= o4BorderLeft && x >= o4BorderRight) {
+            saveZone = "avtive"
+        }
+
         if (x < o2BorderRight && x > o3BorderLeft && girl.y === 750) {
             gameMode = 3;
         } else if (x < o3BorderRight && girl.y === 750 && saveZone === "deactivated") {
             gameMode = 3;
         }
+
+        console.log(saveZone)
 
 
     }
