@@ -118,9 +118,9 @@ class Girl {
         if (x < -3670 && x > -4200 && this.y === 750) {
             icebreak = "yes";
             if (girlAnimationBreakingIceForward.getFrame() === 49) {
-                gameMode = 3;
+                gameMode = 5;
             } else if (girlAnimationBreakingIceBackward.getFrame() === 49) {
-                gameMode = 3;
+                gameMode = 5;
             }
         }
 

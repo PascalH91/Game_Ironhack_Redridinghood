@@ -48,8 +48,6 @@ let miliseconds, seconds, minutes;
 let intervalation;
 
 //TIMERFUNCTION 
-
-
 class Timer {
     setup() {
         if (gameMode === 1) {
@@ -69,17 +67,14 @@ class Timer {
                 miliseconds = (60 - frameCount % 60).toString();
             }
 
-            document.querySelector("h2.timer").innerHTML = minutes + ":" + seconds/*  + ":" + miliseconds */;
+            document.querySelector("h2.timer").innerHTML = minutes + ":" + seconds /*  + ":" + miliseconds */ ;
             if (minutes < 0) {
                 document.querySelector("h2.timer").innerHTML = "0:00:00"
-                gameMode = 3;
+                gameMode = 6;
                 frameCount = 0;
             }
         }
-
-
     }
-
 }
 
 
@@ -91,14 +86,24 @@ function startWindow() {
 
 
 function restartWindow() {
-
     if (gameMode === 3) {
         document.querySelector("#restart").style.visibility = "visible"
     }
 }
 
-function winningWindow() {
+function restartIceWindow() {
+    if (gameMode === 5) {
+        document.querySelector("#restartIce").style.visibility = "visible"
+    }
+}
 
+function restartTimeWindow() {
+    if (gameMode === 6) {
+        document.querySelector("#restartTime").style.visibility = "visible"
+    }
+}
+
+function winningWindow() {
     if (gameMode === 4) {
         document.querySelector("#winning").style.visibility = "visible"
     }
@@ -195,5 +200,7 @@ function restart() {
 
     document.querySelector("#restart").style.visibility = "hidden";
     document.querySelector("#winning").style.visibility = "hidden";
+    document.querySelector("#restartIce").style.visibility = "hidden";
+    document.querySelector("#restartTime").style.visibility = "hidden";
 
 }

@@ -79,6 +79,8 @@ function setup() {
 
     document.querySelector("#restart").style.visibility = "hidden";
     document.querySelector("#winning").style.visibility = "hidden";
+    document.querySelector("#restartIce").style.visibility = "hidden";
+    document.querySelector("#restartTime").style.visibility = "hidden";
 }
 
 
@@ -111,7 +113,8 @@ function draw() {
         forGround.draw();
 
         restartWindow();
-        restartWindow();
         winningWindow();
+        restartIceWindow();
+        restartTimeWindow();
     }
 }
