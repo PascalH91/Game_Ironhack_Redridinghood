@@ -37,6 +37,9 @@ let o5JumpHeight = 700;
 
 
 
+
+
+
 class Obstacle1 {
     setup() {
         //         obstacleImage1 = loadImage("/Assets/Obstacles_09.png");
@@ -68,7 +71,7 @@ class Obstacle1 {
             girl.originalY = 710;
         } else if (girl.y < o5JumpHeight && x < -LeftborderTree - 50 && x > -LeftborderTree - 520) {
             girl.originalY = 650;
-        } else if (x < o1BorderLeft && x > o1BorderRight && direction === "forward" || x < o2BorderLeft && x > o2BorderRight && direction === "forward" || x < o3BorderLeft && x > o3BorderRight && direction === "forward" || x < o4BorderLeft && x > o4BorderRight && direction === "forward" /* || x < o5BorderTreeLeft && x > o5BorderTreeRight && direction === "forward" */ ) {
+        } else if (x < o1BorderLeft && x > o1BorderRight && direction === "forward" || x < o2BorderLeft && x > o2BorderRight && direction === "forward" || x < o3BorderLeft && x > o3BorderRight && direction === "forward" || x < o4BorderLeft && x > o4BorderRight && direction === "forward" /* || x < o5BorderTreeLeft && x > o5BorderTreeRight && direction === "forward" */) {
             hitobstacleFW = "true"
         } else if (x < o1BorderLeft && x > o1BorderRight && direction === "backward" || x < o2BorderLeft && x > o2BorderRight && direction === "backward" || x < o3BorderLeft && x > o3BorderRight && direction === "backward" || x < o4BorderLeft && x > o4BorderRight && direction === "backward" /* || x < o5BorderTreeLeft && x > o5BorderTreeRight && direction === "backward" */ ) {
             hitobstacleBW = "true"

@@ -116,10 +116,9 @@ class Girl {
 
 
         //BREAKING INTO THE ICE--------------------------->>>
-        if (x < -3670 && x > -4200 && this.y === 750) {
-            icebreak = "yes"
-
-        }
+        // if (x < -3670 && x > -4200 && this.y === 750) {
+        //     icebreak = "yes"
+        // }
 
         //IDLE ANIMATIONS GIRL--------------------------->>>
         if (jumpState === "no" && direction === "forward" && throwState === "true") {
@@ -175,6 +174,15 @@ class Girl {
             snowVelocity += snowGravity;
             snowball_Y += snowVelocity;
 
+            if (snowball_Y > 660 && snowball_Y < 665 && (x - snowball_X) < -7000 && (x - snowball_X) > -7090) {
+                trenchOpen = "true";
+                hitTarget = "true";
+                snowballAppearance = "false";
+                targetAnimation.rewind();
+                this.snowballs = [];
+                hitArr.push(1);
+            }
+            
             if (snowball_Y > canvasHeight - 100) {
                 /* snowball_Y = snowBall_Y_Origin; */
                 console.log("OUT");

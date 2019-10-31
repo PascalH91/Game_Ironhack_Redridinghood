@@ -2,7 +2,33 @@ let BGImageLast;
 let BGImageSecondLast;
 let ImgMiddleGround;
 let ImgLakeSolo;
+let ImgFenceFront;
 let snowflakes = [];
+
+let fenceDoorClosedSpritesheet;
+let fenceDoorClosedAnimation;
+let fenceDoorOpeningSpritesheet;
+let fenceDoorOpeningAnimation;
+let fenceDoorOpenSpritesheet;
+let fenceDoorOpenAnimation;
+
+
+let houseSpritesheet;
+let houseAnimation;
+let houseDoorClosedSpritesheet;
+let houseDoorAnimationclosed;
+let houseDoorOpeningSpritesheet;
+let houseDoorOpeningAnimation;
+
+let targetSpritesheet;
+let targetAnimation;
+let targetAnimationStill;
+
+let o6BorderFenceLeft = -6670;
+
+let hitArr = [];
+
+
 
 class BackgroundLast {
     draw() {
@@ -47,7 +73,7 @@ class MiddleGround {
         if (keyIsDown(39) && icebreak !== "yes" && hitobstacleFW !== "true") {
             direction = "forward";
             if (x >= -ImgMiddleGround.width + canvasWidth) {
-                x -= movingSpeed;
+                x -= movingSpeed
                 movingState = "moving";
             }
 
@@ -72,26 +98,117 @@ class LakeSolo {
             image(ImgLakeSolo, lakePos, 0, 10000, 1000)
 
         }
-
-        /*         if (keyIsDown(39) && icebreak !== "yes" && hitobstacleFW !== "true") {
-                    direction = "forward";
-                    if (lakePos >= -ImgMiddleGround.width + canvasWidth) {
-                        lakePos -= movingSpeed;
-                        movingState = "moving";
-                    }
-
-                } else if (keyIsDown(37) && icebreak !== "yes" && hitobstacleBW !== "true") {
-                    direction = "backward";
-                    if (lakePos <= -10) {
-                        lakePos += movingSpeed
-                        movingState = "moving";
-                    }
-
-                }; */
-
-
     }
 }
+
+
+class FenceDoor {
+    setup() {
+        fenceDoorClosedSpritesheet = loadSpriteSheet("/Assets/Spritesheets/PFOR_500_1000_CLOSED.png", 500, 1000, 50);
+        fenceDoorClosedAnimation = loadAnimation(fenceDoorClosedSpritesheet);
+        fenceDoorOpeningSpritesheet = loadSpriteSheet("/Assets/Spritesheets/PFOR_500_1000_OPENING.png", 500, 1000, 50);
+        fenceDoorOpeningAnimation = loadAnimation(fenceDoorOpeningSpritesheet);
+        fenceDoorOpenSpritesheet = loadSpriteSheet("/Assets/Spritesheets/PFOR_500_1000_OPENALWAYS.png", 500, 1000, 50);
+        fenceDoorOpenAnimation = loadAnimation(fenceDoorOpenSpritesheet);
+    }
+
+    draw() {
+        if (trenchOpen === "false") {
+            animation(fenceDoorClosedAnimation, 7605 + x, 500)
+        }
+
+        if (hitTarget === "true") {
+            animation(fenceDoorOpeningAnimation, 7605 + x, 500)
+            fenceDoorOpeningAnimation.looping = false
+        }
+
+        /*        if (trenchOpen === "true") {
+                   animation(fenceDoorOpenAnimation, 7605 + x, 500)
+               } */
+
+
+
+        if (x < o6BorderFenceLeft && trenchOpen === "false") {
+            hitobstacleFW = "true"
+        }
+        if (x < o6BorderFenceLeft - 200) {
+            hitTarget = "true"
+        }
+    }
+}
+
+
+class FenceFront {
+
+
+
+    draw() {
+        image(ImgFenceFront, x, 0, 10000, 1000)
+    }
+}
+
+
+
+
+class House {
+    setup() {
+        houseSpritesheet = loadSpriteSheet("/Assets/Spritesheets/Haus__1500_1000_noDoor.png", 1500, 1000, 75);
+        houseAnimation = loadAnimation(houseSpritesheet);
+    }
+
+    draw() {
+        animation(houseAnimation, 9100 + x, 500)
+    }
+}
+
+class HouseDoor {
+    setup() {
+        houseDoorClosedSpritesheet = loadSpriteSheet("/Assets/Spritesheets/Haus__1500_1000_closedDoor.png", 1500, 1000, 50);
+        houseDoorAnimationclosed = loadAnimation(houseDoorClosedSpritesheet);
+        houseDoorOpeningSpritesheet = loadSpriteSheet("/Assets/Spritesheets/Haus__1500_1000_openingDoor.png", 1500, 1000, 25);
+        houseDoorOpeningAnimation = loadAnimation(houseDoorOpeningSpritesheet);
+    }
+
+    draw() {
+        if (x > -7600) {
+            animation(houseDoorAnimationclosed, 9100 + x, 500)
+            houseDoorOpeningAnimation.rewind()
+        }
+
+        if (x <= -7600) {
+
+            animation(houseDoorOpeningAnimation, 9100 + x, 500)
+            houseDoorOpeningAnimation.looping = false
+        }
+        qwe
+        if (x <= -8150) {
+            enteredHouse = "true"
+            hitobstacleFW = "true"
+        }
+    }
+}
+
+class Target {
+    setup() {
+        targetSpritesheet = loadSpriteSheet("/Assets/Spritesheets/target_Sprite_200_1000.png", 200, 1000, 25);
+        targetAnimation = loadAnimation(targetSpritesheet);
+        targetAnimationStill = loadAnimation(targetSpritesheet);
+
+    }
+    draw() {
+
+        if (hitArr.length === 0) {
+            animation(targetAnimationStill, 7040 + x, 500);
+            targetAnimationStill.goToFrame(0)
+        }
+
+        if (hitTarget === "true") {
+            animation(targetAnimation, 7040 + x, 500);
+            targetAnimation.looping = false
+        }
+    }
+}
+
 
 class Snow {
     draw() {
@@ -107,6 +224,9 @@ class Snow {
         }
     }
 }
+
+
+
 
 
 function snowflake() {
@@ -142,5 +262,3 @@ function snowflake() {
         noStroke();
     };
 }
-
-
