@@ -25,12 +25,12 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(
+  /* background: linear-gradient(
     0deg,
     rgba(255, 255, 255, 1) 0%,
     rgba(167, 188, 198, 1) 72%,
     rgba(94, 100, 117, 1) 100%
-  );
+  ); */
 }
 
 main {
