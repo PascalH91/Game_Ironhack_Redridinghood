@@ -22,13 +22,13 @@ let wind;
 
 function preload() {
     //BG_Images
-    BGImageLast = loadImage("/Assets/Background_Last_Layer_2.png");
-    BGImageSecondLast = loadImage("/Assets/Background_Second_Last_Layer.png");
-    ImgMiddleGround = loadImage("/Assets/MiddleGround__Layer_191031.png");
-    ImgLakeSolo = loadImage("/Assets/BackgroundLake_Solo.png");
-    ImgFenceFront = loadImage("/Assets/Fence_Front.png");
-    ImgFog = loadImage("/Assets/fog.png");
-    ImgForeground = loadImage("/Assets/Foreground_new2.png");
+    BGImageLast = loadImage("Assets/Background_Last_Layer_2.png");
+    BGImageSecondLast = loadImage("Assets/Background_Second_Last_Layer.png");
+    ImgMiddleGround = loadImage("Assets/MiddleGround__Layer_191031.png");
+    ImgLakeSolo = loadImage("Assets/BackgroundLake_Solo.png");
+    ImgFenceFront = loadImage("Assets/Fence_Front.png");
+    ImgFog = loadImage("Assets/fog.png");
+    ImgForeground = loadImage("Assets/Foreground_new2.png");
 
     //SOUNDS
 

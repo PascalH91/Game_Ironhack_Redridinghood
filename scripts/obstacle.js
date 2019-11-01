@@ -107,7 +107,7 @@ class Obstacle1 {
 class ObstacleTree {
 
     setup() {
-        obstacleTreeImg = loadImage("/Assets/Tree_11.png");
+        obstacleTreeImg = loadImage("Assets/Tree_11.png");
 
         treeSprite = createSprite(treeXPosition, treeYPosition, 512, 163);
         treeSprite.addImage(obstacleTreeImg)

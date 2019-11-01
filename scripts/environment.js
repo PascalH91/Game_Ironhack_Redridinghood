@@ -124,11 +124,11 @@ class LakeSolo {
 
 class FenceDoor {
     setup() {
-        fenceDoorClosedSpritesheet = loadSpriteSheet("/Assets/Spritesheets/PFOR_500_1000_CLOSED.png", 500, 1000, 50);
+        fenceDoorClosedSpritesheet = loadSpriteSheet("Assets/Spritesheets/PFOR_500_1000_CLOSED.png", 500, 1000, 50);
         fenceDoorClosedAnimation = loadAnimation(fenceDoorClosedSpritesheet);
-        fenceDoorOpeningSpritesheet = loadSpriteSheet("/Assets/Spritesheets/PFOR_500_1000_OPENING.png", 500, 1000, 50);
+        fenceDoorOpeningSpritesheet = loadSpriteSheet("Assets/Spritesheets/PFOR_500_1000_OPENING.png", 500, 1000, 50);
         fenceDoorOpeningAnimation = loadAnimation(fenceDoorOpeningSpritesheet);
-        fenceDoorOpenSpritesheet = loadSpriteSheet("/Assets/Spritesheets/PFOR_500_1000_OPENALWAYS.png", 500, 1000, 50);
+        fenceDoorOpenSpritesheet = loadSpriteSheet("Assets/Spritesheets/PFOR_500_1000_OPENALWAYS.png", 500, 1000, 50);
         fenceDoorOpenAnimation = loadAnimation(fenceDoorOpenSpritesheet);
     }
 
@@ -160,7 +160,7 @@ class FenceFront {
 
 class House {
     setup() {
-        houseSpritesheet = loadSpriteSheet("/Assets/Spritesheets/Haus__1500_1000_noDoor.png", 1500, 1000, 75);
+        houseSpritesheet = loadSpriteSheet("Assets/Spritesheets/Haus__1500_1000_noDoor.png", 1500, 1000, 75);
         houseAnimation = loadAnimation(houseSpritesheet);
     }
 
@@ -171,9 +171,9 @@ class House {
 
 class HouseDoor {
     setup() {
-        houseDoorClosedSpritesheet = loadSpriteSheet("/Assets/Spritesheets/Haus__1500_1000_closedDoor.png", 1500, 1000, 50);
+        houseDoorClosedSpritesheet = loadSpriteSheet("Assets/Spritesheets/Haus__1500_1000_closedDoor.png", 1500, 1000, 50);
         houseDoorAnimationclosed = loadAnimation(houseDoorClosedSpritesheet);
-        houseDoorOpeningSpritesheet = loadSpriteSheet("/Assets/Spritesheets/Haus__1500_1000_openingDoor.png", 1500, 1000, 25);
+        houseDoorOpeningSpritesheet = loadSpriteSheet("Assets/Spritesheets/Haus__1500_1000_openingDoor.png", 1500, 1000, 25);
         houseDoorOpeningAnimation = loadAnimation(houseDoorOpeningSpritesheet);
     }
 
@@ -201,7 +201,7 @@ class HouseDoor {
 
 class Target {
     setup() {
-        targetSpritesheet = loadSpriteSheet("/Assets/Spritesheets/target_Sprite_200_1000.png", 200, 1000, 25);
+        targetSpritesheet = loadSpriteSheet("Assets/Spritesheets/target_Sprite_200_1000.png", 200, 1000, 25);
         targetAnimation = loadAnimation(targetSpritesheet);
         targetAnimationStill = loadAnimation(targetSpritesheet);
 

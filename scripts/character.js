@@ -56,41 +56,41 @@ class Girl {
          */
 
 
-        SpriteSheetGirlStandingForward = loadSpriteSheet("/Assets/Spritesheets/Stand_Resize_FW.png", 115, 166, 50);
+        SpriteSheetGirlStandingForward = loadSpriteSheet("Assets/Spritesheets/Stand_Resize_FW.png", 115, 166, 50);
 
         girlAnimationStandingForward = loadAnimation(SpriteSheetGirlStandingForward);
 
-        SpriteSheetGirlStandingBackward = loadSpriteSheet("/Assets/Spritesheets/Stand_Resize_BW.png", 115, 166, 50);
+        SpriteSheetGirlStandingBackward = loadSpriteSheet("Assets/Spritesheets/Stand_Resize_BW.png", 115, 166, 50);
         girlAnimationStandingBackward = loadAnimation(SpriteSheetGirlStandingBackward);
 
-        SpriteSheetGirlJumpingForward = loadSpriteSheet("/Assets/Spritesheets/Jump_Resize_FW.png", 115, 166, 25);
+        SpriteSheetGirlJumpingForward = loadSpriteSheet("Assets/Spritesheets/Jump_Resize_FW.png", 115, 166, 25);
         girlAnimationJumpingForward = loadAnimation(SpriteSheetGirlJumpingForward);
 
-        SpriteSheetGirlJumpingBackward = loadSpriteSheet("/Assets/Spritesheets/Jump_Resize_BW.png", 115, 166, 25);
+        SpriteSheetGirlJumpingBackward = loadSpriteSheet("Assets/Spritesheets/Jump_Resize_BW.png", 115, 166, 25);
         girlAnimationJumpingBackward = loadAnimation(SpriteSheetGirlJumpingBackward);
 
-        SpriteSheetGirlWalkingForward = loadSpriteSheet("/Assets/Spritesheets/Walk_2_Resize_FW.png", 115, 166, 50);
+        SpriteSheetGirlWalkingForward = loadSpriteSheet("Assets/Spritesheets/Walk_2_Resize_FW.png", 115, 166, 50);
         girlAnimationWalkingForward = loadAnimation(SpriteSheetGirlWalkingForward);
 
-        SpriteSheetGirlWalkingBackward = loadSpriteSheet("/Assets/Spritesheets/Walk_2_Resize_reverse.png", 115, 166, 50);
+        SpriteSheetGirlWalkingBackward = loadSpriteSheet("Assets/Spritesheets/Walk_2_Resize_reverse.png", 115, 166, 50);
         girlAnimationWalkingBackward = loadAnimation(SpriteSheetGirlWalkingBackward);
 
-        SpriteSheetGirlPushingForward = loadSpriteSheet("/Assets/Spritesheets/Push_Resize_FW.png", 129, 166, 50);
+        SpriteSheetGirlPushingForward = loadSpriteSheet("Assets/Spritesheets/Push_Resize_FW.png", 129, 166, 50);
         girlAnimationPushingForward = loadAnimation(SpriteSheetGirlPushingForward);
 
-        SpriteSheetGirlPushingBackward = loadSpriteSheet("/Assets/Spritesheets/Push_Resize_BW.png", 129, 166, 50);
+        SpriteSheetGirlPushingBackward = loadSpriteSheet("Assets/Spritesheets/Push_Resize_BW.png", 129, 166, 50);
         girlAnimationPushingBackward = loadAnimation(SpriteSheetGirlPushingBackward);
 
-        SpriteSheetGirlBreakingIceForward = loadSpriteSheet("/Assets/Spritesheets/Ice_Resize_FW.png", 115, 166, 50);
+        SpriteSheetGirlBreakingIceForward = loadSpriteSheet("Assets/Spritesheets/Ice_Resize_FW.png", 115, 166, 50);
         girlAnimationBreakingIceForward = loadAnimation(SpriteSheetGirlBreakingIceForward);
 
-        SpriteSheetGirlBreakingIceBackward = loadSpriteSheet("/Assets/Spritesheets/Ice_Resize _BW.png", 115, 166, 50);
+        SpriteSheetGirlBreakingIceBackward = loadSpriteSheet("Assets/Spritesheets/Ice_Resize _BW.png", 115, 166, 50);
         girlAnimationBreakingIceBackward = loadAnimation(SpriteSheetGirlBreakingIceBackward);
 
-        SpriteSheetGirlThrowingForward = loadSpriteSheet("/Assets/Spritesheets/Throw_Resize_FW.png", 115, 166, 25);
+        SpriteSheetGirlThrowingForward = loadSpriteSheet("Assets/Spritesheets/Throw_Resize_FW.png", 115, 166, 25);
         girlAnimationThrowingForward = loadAnimation(SpriteSheetGirlThrowingForward);
 
-        SpriteSheetGirlThrowingBackward = loadSpriteSheet("/Assets/Spritesheets/Throw_Resize_BW.png", 115, 166, 25);
+        SpriteSheetGirlThrowingBackward = loadSpriteSheet("Assets/Spritesheets/Throw_Resize_BW.png", 115, 166, 25);
         girlAnimationThrowingBackward = loadAnimation(SpriteSheetGirlThrowingBackward);
 
     }
