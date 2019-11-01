@@ -1,4 +1,4 @@
-let canvasHeight = window.innerHeight;
+let canvasHeight = 1000;
 let canvasWidth = 1600;
 let x = 0;
 /* let movingSpeed = 1.5; */
@@ -117,6 +117,7 @@ function startGame() {
 }
 
 function restart() {
+
 
     /*  canvas.remove() */
 

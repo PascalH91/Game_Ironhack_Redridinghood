@@ -11,110 +11,111 @@
 </head>
 
 <body>
-
-    <div id="container"></div>
-    <div class="gradient"></div>
+        <div class="gradient"></div>
 
 
 
 
-    <h2 class="timer"></h2>
+        <h2 class="timer"></h2>
+   <!--  <main> -->
 
-    <!-- STARTWINDOW -->
-    <section id="start">
-        <img src="/Assets/Startupscreen_01.png" alt="tree">
-        <div class="wrapperdiv">
+        <div id="container"></div>
 
-            <article>
-                Help little <span>Red-Riding-Hack</span> arrive safely and in time at her grandmas cabin!
-            </article>
-            <img src="/Assets/Untitled-1_05.png" alt="Redridinghood">
-            <div>
-                <button class="start" onclick="startGame()">start to play</button>
-                <p>You can use the following commands:</p>
-                <ul>
-                    <li>
-                        <p>forward</p> <img src="/Assets/FW.png" alt="fw">
-                    </li>
-                    <li>
-                        <p>backward</p><img src="/Assets/BW.png" alt="bw">
-                    </li>
-                    <li class="jump">
-                        <p class="firstp">jump</p>
-                        <p class="lastp">spacebar</p>
-                    </li>
-                    <li>
-                        <p>push</p><img src="/Assets/Push_04.png" alt="push">
-                    </li>
-                    <li>
-                        <p>snowball</p><img src="/Assets/Shoot.png" alt="shoot">
-                    </li>
-                </ul>
+        <!-- STARTWINDOW -->
+        <section id="start">
+            <img src="/Assets/Startupscreen_01.png" alt="tree">
+            <div class="wrapperdiv">
+
+                <article>
+                    Help little <span>Red-Riding-Hack</span> arrive safely and in time at her grandmas cabin!
+                </article>
+                <img src="/Assets/Untitled-1_05.png" alt="Redridinghood">
+                <div>
+                    <button class="start" onclick="startGame()">start to play</button>
+                    <p>You can use the following commands:</p>
+                    <ul>
+                        <li>
+                            <p>forward</p> <img src="/Assets/FW.png" alt="fw">
+                        </li>
+                        <li>
+                            <p>backward</p><img src="/Assets/BW.png" alt="bw">
+                        </li>
+                        <li class="jump">
+                            <p class="firstp">jump</p>
+                            <p class="lastp">spacebar</p>
+                        </li>
+                        <li>
+                            <p>push</p><img src="/Assets/Push_04.png" alt="push">
+                        </li>
+                        <li>
+                            <p>snowball</p><img src="/Assets/Shoot.png" alt="shoot">
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+            <img src="/Assets/Startupscreen_03.png" alt="tree">
+        </section>
+
+
+
+
+        <section id="restart">
+            <!--         <img src="/Assets/Startupscreen_01.png" alt="tree"> -->
+            <div class="wrapperdiv">
+                <article>
+                    Oh No! Maybe you jumped too far...
+                </article>
+
+                <button class="restart" onclick="restart()">restart?</button>
+            </div>
+            <!--         <img src="/Assets/Startupscreen_03.png" alt="tree"> -->
+        </section>
+
+        <section id="restartIce">
+            <div class="wrapperdiv">
+                <article>
+                    Oh No! Watch out for something that might help you to cross the river safely...
+                </article>
+
+                <button class="restart" onclick="restart()">restart?</button>
+            </div>
+        </section>
+
+
+        <section id="restartTime">
+            <div class="wrapperdiv">
+                <article>
+                    Oh no! Time is up...<br>
+                    Purging-hour in the woods begins.
+                </article>
+
+                <button class="restart" onclick="restart()">restart?</button>
+            </div>
+        </section>
+
+
+
+
+        <section id="winning">
+            <!--         <img src="/Assets/Startupscreen_01.png" alt="tree"> -->
+            <div class="wrapperdiv">
+                <article>
+                    Congratulations!!!<br>
+                    Thanks to your help, little Red-Riding-Hack can visit her Grandma. Everyone is happy.<br>
+                    Time for Ironbeer.
+                </article>
+                <div>
+                    <p>Do you want to play again?</p>
+                    <button class="restart" onclick="restart()">restart</button>
+                </div>
 
             </div>
-        </div>
-        <img src="/Assets/Startupscreen_03.png" alt="tree">
-    </section>
+            <!--         <img src="/Assets/Startupscreen_03.png" alt="tree"> -->
+        </section>
 
 
-
-
-    <section id="restart">
-        <!--         <img src="/Assets/Startupscreen_01.png" alt="tree"> -->
-        <div class="wrapperdiv">
-            <article>
-                Oh No! Maybe you jumped too far...
-            </article>
-
-            <button class="restart" onclick="restart()">restart?</button>
-        </div>
-        <!--         <img src="/Assets/Startupscreen_03.png" alt="tree"> -->
-    </section>
-
-    <section id="restartIce">
-        <div class="wrapperdiv">
-            <article>
-                Oh No! Watch out for something that might help you to cross the river safely...
-            </article>
-
-            <button class="restart" onclick="restart()">restart?</button>
-        </div>
-    </section>
-
-
-    <section id="restartTime">
-        <div class="wrapperdiv">
-            <article>
-                Oh no! Time is up...<br>
-                Purging-hour in the woods begins.
-            </article>
-
-            <button class="restart" onclick="restart()">restart?</button>
-        </div>
-    </section>
-
-
-
-
-    <section id="winning">
-        <!--         <img src="/Assets/Startupscreen_01.png" alt="tree"> -->
-        <div class="wrapperdiv">
-            <article>
-                Congratulations!!!<br>
-                Thanks to your help, little Red-Riding-Hack can visit her Grandma. Everyone is happy.<br>
-                Time for Ironbeer.
-            </article>
-            <div>
-                <p>Do you want to play again?</p>
-                <button class="restart" onclick="restart()">restart</button>
-            </div>
-
-        </div>
-        <!--         <img src="/Assets/Startupscreen_03.png" alt="tree"> -->
-    </section>
-
-
-
+ <!--    </main> -->
 
     <!-- RESTARTWINDOW -->
 
