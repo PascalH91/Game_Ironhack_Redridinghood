@@ -96,12 +96,7 @@ class Obstacle1 {
         } else if (x < o3BorderRight && girl.y === 750 && saveZone === "deactivated") {
             gameMode = 3;
         }
-
-        console.log(saveZone)
-
-
     }
-
 }
 
 class ObstacleTree {
@@ -130,7 +125,6 @@ class ObstacleTree {
             } else if (pushState === "push" && movingState === "moving" && direction === "backward") {
                 if (LeftborderTree >= 1860) {
                     LeftborderTree -= movingSpeed + 1;
-                    /*   console.log(x); */
                 }
 
             }
@@ -141,11 +135,6 @@ class ObstacleTree {
             treeYPosition = 800;
             icebreakTree = "true";
         }
-        console.log("treeSprite.position.x", treeSprite.position.x)
-        console.log("LeftborderTree", LeftborderTree)
-        /*      if (girl.y < 700 && x <= -LeftborderTree && x >= -RightborderTree) {
-                 girl.originalY = 650;
-             } */
 
     }
 }

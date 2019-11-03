@@ -28,13 +28,6 @@ let girlAnimationThrowingForward;
 let SpriteSheetGirlThrowingBackward;
 let girlAnimationThrowingBackward;
 
-
-
-/* let girlCollider;
-let actualImage;
-let positionColliderX; */
-
-
 class Girl {
     constructor(xSize, ySize) {
         this.width = xSize;
@@ -47,13 +40,8 @@ class Girl {
 
     setup() {
         this.y = girlY;
-        /*      girlY = this.y; */
-        this.originalY = this.y;
-        /*  SPRITESHEETS*/
 
-        /*         girlCollider = createSprite(canvasWidth / 2 - 10, this.y, 80, 140);
-                girlCollider.setCollider("rectangle", 0, 0, 80, 140);
-         */
+        this.originalY = this.y;
 
 
         SpriteSheetGirlStandingForward = loadSpriteSheet("Assets/Spritesheets/Stand_Resize_FW.png", 115, 166, 50);
@@ -186,9 +174,6 @@ class Girl {
             }
 
 
-
-            /*      this.snowballs.push(new Snowball()); 
-             */
             snowVelocity += snowGravity;
             snowball_Y += snowVelocity;
 
@@ -297,7 +282,4 @@ function keyReleased() {
         pushState = "no";
         movingSpeed = 1.5;
     }
-    // if (keyCode === 83) {
-    //     throwState = "false";
-    // }
 }
