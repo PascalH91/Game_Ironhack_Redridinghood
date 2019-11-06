@@ -162,6 +162,7 @@ section {
   position: fixed;
   outline: none;
   border: none;
+  visibility: hidden;
 }
 
 #restartIce {
@@ -175,6 +176,7 @@ section {
   position: fixed;
   outline: none;
   border: none;
+  visibility: hidden;
 }
 
 #restartTime {
@@ -188,6 +190,7 @@ section {
   position: fixed;
   outline: none;
   border: none;
+  visibility: hidden;
 }
 
 #winning {
@@ -201,6 +204,7 @@ section {
   position: fixed;
   outline: none;
   border: none;
+  visibility: hidden;
 }
 
 button {
